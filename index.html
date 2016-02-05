@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>MineLegends - Home</title>
+        <link rel="shortcut icon" href="images/favicon.ico" />
+        <!-- Compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- Compiled and minified JavaScript -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
+    </head>
+
+    <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1 0 auto;
+        }
+    </style>
+
+    <body>
+        <!-- NAV BAR -->
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a class="orange darken-2 white-text flow-text" href="javascript:selectText('nav-play')" id="nav-play">play.minelegends.us</a></li>
+        </ul>
+        <ul id="dropdown2" class="dropdown-content">
+            <li><a class="orange darken-2 blue-grey-text lighten-3 flow-text" href="index.html">Players-COMING SOON!</a></li>
+        </ul>
+        <div class="navbar-fixed">
+            <nav class="orange darken-2">
+                <div class="nav-wrapper">
+                    <a href="index.html" class="brand-logo"><img src="http://i.imgur.com/HDRBezn.png" width="64" height="64"></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Play<i class="material-icons right">launch</i></a></li>
+                        <li><a class="dropdown-button" href="factions.html" data-activates="dropdown2">Factions</a></li>
+                        <li><a href="http://forums.minelegends.us">Forums</a></li>
+                        <li><a href="http://minelegendsnetwork.buycraft.net">Store</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="factions.html">Factions</a></li>
+                        <li><a href="http://forums.minelegends.us">Forums</a></li>
+                        <li><a href="http://minelegendsnetwork.buycraft.net">Store</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                    <a href="index.html" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- BODY -->
+        <div class="container">
+            <!-- Welcome -->
+            <h1 class="orange-text">Welcome to MineLegends!</h1>
+            <hr size="1" color="lightgrey">
+            <div class="card-panel grey lighten-5 z-depth-1 hoverable">
+                <h3 class="orange-text">A whole new chapter has began on MineLegends...</h3>
+                <hr size="1" color="lightgrey">
+                <p class="black-text flow-text">
+                    Welcome to the new and improved MineLegends Factions! Our developers
+                    have been working hard to bring a completely redesigned experience to the entire server.
+                    Join us now and begin your epic journey!
+                </p>
+                <hr size="1" color="lightgrey">
+                <span class="flow-text">IP to MineLegends: <span class="orange-text"><a href="javascript:selectText('selectable')" id="selectable">play.minelegends.us</a></span></span>
+            </div>
+
+            <!-- Returning Players -->
+            <div class="card-panel grey lighten-5 z-depth-1 hoverable">
+                <h3 class="orange-text bold">Attention returning players!</h3>
+                <hr size="1" color="lightgrey">
+                <p class="flow-text">Returning players, please do not panic. If you have made previous purchases on the old server your credit is not gone.
+                    We are currently in the process of moving over transactions and you will receive full credit in the store equivalent to your previous transactions.
+                    So again, please do not panic; you will have credit in our store soon.</p>
+            </div>
+
+            <!-- Trailer -->
+            <div id="trail" class="card-panel grey lighten-5 z-depth-1 hoverable">
+                <h3 class="centered orange-text">Check out the trailer!</h3>
+                <hr size="1" color="lightgrey">
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/SkzvyupcjFI" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            <!-- Cards -->
+            <div class="row">
+                <!-- Social -->
+                <div class="col s5 m4">
+                    <div class="card hoverable medium">
+                        <div class="card-image">
+                            <img src="http://i.imgur.com/xhLM9Ej.jpg">
+                            <span class="card-title">Stay updated!</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Follow us on Twitter, where we will keep you updated 24/7 with the latest server news and announcements!</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="https://twitter.com/MineLegendsMC" class="waves-effect waves-light btn blue white-text">Twitter</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trailer vid -->
+                <div class="col s4 m5">
+                    <div class="card hoverable medium">
+                        <div class="card-image">
+                            <img src="http://i.imgur.com/MJsigEf.jpg">
+                            <span class="card-title">Check out the trailer!</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Take a look at this awesome trailer detailing all the great new features on ML Factions!</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#trail" class="waves-effect waves-light btn orange white-text">Trailer</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="page-footer orange darken-2">
+            <div class="container">
+                <div class="row">
+                    <div class="card-panel grey darken-2 z-depth-1 col s5 left">
+                        <form id="contact" method="post" name="contact" action="contact.php">
+                            <h4 class="white-text flow-text">Contact Us</h4>
+                            <hr size="1" color="white">
+                            <div class="row">
+                                <div class="input-field white-text col s8">
+                                    <i class="material-icons prefix">account_circle</i>
+                                    <input id="username" name="name" type="text" class="validate white-text">
+                                    <label for="username">Username</label>
+                                </div>
+                                <div class="input-field white-text col s12">
+                                    <i class="material-icons prefix">email</i>
+                                    <input id="email" name="uemail" type="email" class="validate white-text">
+                                    <label for="email" data-error="wrong" data-success="right">Email</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix white-text">message</i>
+                                    <textarea id="message" name="msg" class="materialize-textarea" class="white-text"></textarea>
+                                    <label for="message">Message</label>
+                                </div>
+                                <div class="col s4 m4">
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">&copy; 2015 MineLegends. All Rights Reserved. <span class="right">Website created and designed by Jaden Giordano</span></div>
+            </div>
+        </footer>
+
+        <!--Import jQuery before materialize.js-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.button-collapse').sideNav();
+                $(".dropdown-button").dropdown({
+                    hover: true,
+                    constrain_width: false,
+                    belowOrigin: true
+                });
+            });
+        </script>
+
+        <script>
+            function copyIP() {
+                prompt("IP to MineLegends (CTRL+C): ", "play.minelegends.us");
+            }
+            function selectText(containerid) {
+                if (document.selection) {
+                    var range = document.body.createTextRange();
+                    range.moveToElementText(document.getElementById(containerid));
+                    range.select();
+                } else if (window.getSelection) {
+                    var range = document.createRange();
+                    range.selectNode(document.getElementById(containerid));
+                    window.getSelection().addRange(range);
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MineLegends - Home</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
+</head>
+
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+</style>
+
+<body>
+<!-- NAV BAR -->
+<ul id="dropdown1" class="dropdown-content">
+    <li><a class="orange darken-2 white-text flow-text" href="javascript:selectText('nav-play')" id="nav-play">play.minelegends.us</a></li>
+</ul>
+<ul id="dropdown2" class="dropdown-content">
+    <li><a class="orange darken-2 blue-grey-text lighten-3 flow-text" href="players.phtml">Players-COMING SOON!</a></li>
+</ul>
+<div class="navbar-fixed">
+    <nav class="orange darken-2">
+        <div class="nav-wrapper">
+            <a href="players.phtml" class="brand-logo"><img src="http://i.imgur.com/HDRBezn.png" width="64" height="64"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Play<i class="material-icons right">launch</i></a></li>
+                <li><a class="dropdown-button" href="factions.html" data-activates="dropdown2">Factions</a></li>
+                <li><a href="http://forums.minelegends.us">Forums</a></li>
+                <li><a href="http://minelegendsnetwork.buycraft.net">Store</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="factions.html">Factions</a></li>
+                <li><a href="http://forums.minelegends.us">Forums</a></li>
+                <li><a href="http://minelegendsnetwork.buycraft.net">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+            <a href="players.phtml" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+</div>
+
+<!-- BODY -->
+<div class="container">
+    <h1 class="orange-text">Players</h1>
+    <hr size="1" color="lightgrey">
+        <?php
+        $s_name = "198.27.87.115";
+        $user = "minelege_econacc";
+        $pass = "GbPZXc^M5MvI";
+        $db = "minelege_economy";
+
+        $conn = new mysqli($s_name, $user, $pass, $db);
+        if ($conn->connect_error) {
+            die("Connection Failed: " . $conn->connect_error);
+        }
+
+        $st = "SELECT * FROM Players";
+        $result = $conn->query($st);
+
+        if ($result->num_rows > 0) {
+            echo '<ul class="collapsible popout" data-collapsible="accordion">';
+            while ($row = $result->fetch_assoc()) {
+                print
+                    '
+                    <li>
+                        <div class="collapsible-header">
+                            <div class="row">
+                                <img src="https://minotar.net/avatar/'. $row["Name"] .'/50.png" class="circle responsive-img col s1">
+                                <p class="flow=text orange-text col s6">' . $row["Name"] . '</p>
+                                <p class="flow-text right">$'. $row["Balance"] .'</p>
+                            </div>
+                        </div>
+                        <div class="collapsible-body">
+                            <p class="flow-text">Player Data.....</p>
+                        </div>
+                    </li>
+                    ';
+            }
+            echo '</ul>';
+        } else {
+            echo "0 results";
+        }
+
+        $conn->close();
+        ?>
+</div>
+<!-- FOOTER -->
+<footer class="page-footer orange darken-2">
+    <div class="container">
+        <form id="contact" method="post" name="contact" action="contact.php" class="row col s5">
+            <div class="card-panel grey darken-2 z-depth-1 col m5">
+                <h4 class="white-text flow-text">Contact Us</h4>
+                <hr size="1" color="white">
+                <div class="row">
+                    <div class="input-field white-text col s8">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="username" name="name" type="text" class="validate white-text">
+                        <label for="username">Username</label>
+                    </div>
+                    <div class="input-field white-text col s12">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" name="uemail" type="email" class="validate white-text">
+                        <label for="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix white-text">message</i>
+                        <textarea id="message" name="msg" class="materialize-textarea" class="white-text"></textarea>
+                        <label for="message">Message</label>
+                    </div>
+                    <div class="col s4 m4">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">&copy; 2015 MineLegends. All Rights Reserved. <span class="right">Website created and designed by Jaden Giordano</span></div>
+    </div>
+</footer>
+
+<!--Import jQuery before materialize.js-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.button-collapse').sideNav();
+        $(".dropdown-button").dropdown({
+            hover: true,
+            constrain_width: false,
+            belowOrigin: true
+        });
+        $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+    });
+</script>
+
+<script>
+    function copyIP() {
+        prompt("IP to MineLegends (CTRL+C): ", "play.minelegends.us");
+    }
+    function selectText(containerid) {
+        if (document.selection) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(document.getElementById(containerid));
+            range.select();
+        } else if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNode(document.getElementById(containerid));
+            window.getSelection().addRange(range);
+        }
+    }
+</script>
+</body>
+</html>

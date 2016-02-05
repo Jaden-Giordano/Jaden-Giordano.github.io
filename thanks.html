@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MineLegends - Home</title>
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
+</head>
+
+<body>
+<div class="navbar-fixed">
+    <nav class="orange darken-2">
+        <div class="nav-wrapper">
+            <a href="thanks.html" class="brand-logo"><img src="http://i.imgur.com/HDRBezn.png" width="64" height="64"></a>
+        </div>
+    </nav>
+</div>
+
+<!-- BODY -->
+<div class="container">
+    <div class="card-panel grey lighten-5 z-depth-1 hoverable">
+        <h3 class="orange-text">We'll get back to you soon!</h3>
+        <hr size="1" color="lightgrey">
+        <p class="black-text flow-text">
+            Thank you for your submission. One of our staff will help you as soon as they have the chance!
+        </p>
+        <hr size="1" color="lightgrey">
+        <p class="orange-text flow-text">Return to <span> <a href="index.html">minelegends.us</a></span></p>
+    </div>
+</div>
+
+<style>
+    body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+</style>
+
+<!-- FOOTER -->
+<footer class="page-footer orange darken-2">
+    <div class="footer-copyright">
+        <div class="container">&copy; 2015 MineLegends. All Rights Reserved. <span class="right">Website created and designed by Jaden Giordano</span></div>
+    </div>
+</footer>
+
+<!--Import jQuery before materialize.js-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.button-collapse').sideNav();
+        $(".dropdown-button").dropdown({
+            hover: true,
+            constrain_width: false,
+            belowOrigin: true
+        });
+    });
+</script>
+
+<script>
+    function copyIP() {
+        prompt("IP to MineLegends (CTRL+C): ", "play.minelegends.us");
+    }
+    function selectText(containerid) {
+        if (document.selection) {
+            var range = document.body.createTextRange();
+            range.moveToElementText(document.getElementById(containerid));
+            range.select();
+        } else if (window.getSelection) {
+            var range = document.createRange();
+            range.selectNode(document.getElementById(containerid));
+            window.getSelection().addRange(range);
+        }
+    }
+</script>
+</body>
+</html>
