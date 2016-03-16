@@ -18,23 +18,28 @@
 
     <body>
       <nav>
-        <div class="nav-wrapper orange">
-          <a class="brand-logo center">Masondogg Studios Github Tutorial</a>
+        <div class="nav-wrapper blue darken-3">
+          <a class="brand-logo center">Github Collaboration Tutorial</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
           </ul>
         </div>
       </nav>
 
+      <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+        <a href="index.html" class="btn-floating btn-large red">
+          <i class="large material-icons">navigation</i>
+        </a>
+      </div>
+
       <div class="container">
         <div class="col s12">
           <div class="card-panel white darken-1">
-            <h4 class="flow-text">Github Collaboration Tutorial</h4>
-            <div class="divider"></div>
             <h5 class="flow-text">Table of Contents</h5>
             <div class="divider"></div>
             <p class="pushright"><a href="#SourceTree">Downloading and Installing Source Tree</a><br>
             <a href="#Unity">Setting up Project in Unity</a><br>
-            <a href="#PushingPullingCommitting">Pushing, Pulling, and Committing</a>
+            <a href="#PushingPullingCommitting">Pushing, Pulling, and Committing</a><br>
+            <a href="#Branches">Branches</a>
             </p>
           </div>
           <div id="SourceTree" class="card-panel white darken-1">
@@ -43,27 +48,54 @@
             <p>Source Tree can be downloaded here: <a href="https://www.sourcetreeapp.com">Source Tree Download</a></p>
             <div class="divider"></div>
             <p>Once downloaded and installed, create an account or log in with Google. After logging in on the website and creating your license, return to the application and you should be able to continue. Click continue and you will be prompted with connecting a github account.</p>
-            <img class="responsive-img" src="stconn.png">
+            <img class="responsive-img center-align" src="stconn.png">
             <p>Use your Github login credentials to connect you Github account. Click continue then you will be prompted to clone a repository (repo), choose masondogg/Project-Orion and select a destination to save the repo to (best place would be a floder on your desktop or in your unity project folder), as shown here...</p>
-            <img class="responsive-img" class="responsive-img" src="stclone.png">
-            <img class="responsive-img" src="stclonedest.png">
-            <p>Click clone to continue, it will add the repo to your computer, now its time to get everything onto your computer. Double click the Project-Orion repo to open up the Git Ui panel. Then click on 'master' under 'Branches' on the left-side menu, then click 'pull'</p>
+            <img class="responsive-img center-align" class="responsive-img" src="stclone.png">
+            <img class="responsive-img center-align" src="stclonedest.png">
+            <p>Click clone to continue, it will add the repo to your computer, now its time to get everything onto your computer. Double click the Project-Orion repo to open up the Git Ui panel. Then click on 'master' under 'Branches' on the left-side menu, then click 'pull'.</p>
           </div>
           <div id="Unity" class="card-panel white darken-1">
             <h5 class="flow-text">Setting up Project in Unity</h5>
             <div class="divider"></div>
             <p>Open up Unity and click 'Open', go to the location of the folder you set for the repo, and select it (double click it). Unity should take care or the rest.</p>
-            <img class="responsive-img" src="unity.png">
-            <img class="responsive-img" src="unityopen.png">
+            <img class="responsive-img center-align" src="unityopen.png">
           </div>
           <div id="PushingPullingCommitting" class="card-panel white darken-1">
             <h5 class="flow-text">Pushing, Pulling, and Committing</h5>
             <div class="divider"></div>
-            <p>Throughout your use of Github Collaboration you will become very fond of Pushing, Pulling, and Committing. The difference between the three and there uses are as follows:<br><br>
-            Pulling: As you've already learned to get the files from Github to your computer you had to 'pull', thats what this does, e.g. if someone mad a change and put it up then you would 'pull' to get those changes.<br><br>
-            Committing: Committing is how you update your changes in the SourceTree Application, or a way of commenting on your changes and putting them into a timeline.<br><br>
-            Pushing: After committing you will 'push' to upload your changes (commit) to the Github servers.
+            <p>Throughout your use of Github Collaboration you will become very fond of Pushing, Pulling, and Committing. The difference between the three and there uses are as follows:</p>
+            <h5 class="flow-text">Pulling</h5>
+            <div class="divider"></div>
+            <p>As you've already learned to get the files from Github to your computer you had to 'pull', thats what this does, e.g. if someone mad a change and put it up then you would 'pull' to get those changes.</p>
+            <h5 class="flow-text">Committing</h5>
+            <div class="divider"></div>
+            <p>Committing is how you update your changes in the SourceTree Application, or a way of commenting on your changes and putting them into a timeline.</p>
+            <p>To commit your changes, select all the files, under 'Unstaged files', that you wish to commit and it will add it to the 'Staged files' section.</p>
+            <img class="responsive-img center-align" src="stage.png">
+            <p>Now click commit and add a message describing the changes being committed.</p>
+            <img class="responsive-img center-align" src="commit.png">
+            <p>Continued in 'Pushing'...</p>
+            <h5 class="flow-text">Pushing</h5>
+            <div class="divider"></div>
+            <p>After committing you will 'push' to upload your changes (commit) to the Github servers.</p>
+            <p>To push a commit, click 'push' and select the branch you wish to push the commit to.</p>
+            <img class="responsive-img center-align" src="push.png">
             </p>
+          </div>
+          <div id="Branches" class="card-panel white darken-1">
+          <h5 class="flow-text">Branches</h5>
+          <div class="divider"></div>
+          <p>A branch is basically a container for commits, which could be branched off the master (a branch), or any other branch. Think of it as a buffer for making changes. e.g.: You branch off the master to work on the assets for the player, commit to it so its on the server for others to branch off of if they wish, then once it's ready you can merge it to the master branch. Branches could be: Player, World, Minigame1, Minigame2, Menu, etc.</p>
+          <p>Creating a branch is simple. First select the commit you would like to branch off of...</p>
+          <img class="responsive-img center-align" src="commitbranch.png">
+          <p>The click branch, you will be prompted with a menu to set the name.</p>
+          <img class="responsive-img center-align" src="branch.png">
+          <p>There will be a blue circle next to the current branch, so be careful when making commits and be sure you are on the correct branch when making changes (Ive messed up alot on this, kinda a mess to clean up when commiting get mixed up betwen branches).</p>
+          <h5 class="flow-text">Merging</h5>
+          <div class="divider"></div>
+          <p>Merging branches will combine the changes between the two, so dont worry unless you deleted one of the files they were working on it wont overwrite what they did (Github is really good at merging; boggles my mind kinda).</p>
+          <p>To merge branches, click 'merge', then select the commit you would like to merge.</p>
+          <img class="responsive-img center-align" src="merge.png">
           </div>
         </div>
       </div>
