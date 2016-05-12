@@ -207,8 +207,14 @@ function tick() {
 
 	if (!gamereset) {
 		ball.tick();
-		if (ball.intersects(paddle1) || ball.intersects(paddle2))
+		if (ball.intersects(paddle1)) {
 			ball.hit('hor');
+			ball.x = paddle1.x+paddle1.width;
+		}
+		if (ball.intersects(paddle2)) {
+			ball.hit('hor');
+			ball.x = paddle2.x - ball.width;
+		}
 	}
 	else {
 		resetdelay += deltaTime
