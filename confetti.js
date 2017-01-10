@@ -75,7 +75,6 @@
             frameCount = 0;
         }
         currentColor = [lerp(currentColor[0], currentTargetColor[0], .02), lerp(currentColor[1], currentTargetColor[1], .02), lerp(currentColor[2], currentTargetColor[2], .02)];
-        console.log(currentColor);
         context.fillStyle = "rgba(" + ~~currentColor[0] + ", " + ~~currentColor[1] + ", " + ~~currentColor[2] + ", 1)";
         context.textAlign = "center";
         context.fillText(text, canvas.width / 2, canvas.height / 2);
