@@ -58,8 +58,7 @@ function keyReleased() {
 }
 
 function setup() {
-    console.log(windowWidth + ", " + windowHeight);
-    canvas = createCanvas(windowWidth, windowHeight);
+    canvas = createCanvas(windowWidth-100, windowHeight-100);
     yuuri = new Skater(color(255, 0, 0));
 }
 
