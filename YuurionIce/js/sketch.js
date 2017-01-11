@@ -58,9 +58,10 @@ function keyReleased() {
 }
 
 function setup() {
-    canvas = createCanvas(windowWidth-100, windowHeight-100);
+    canvas = createCanvas(window.innerWidth - 100, window.innerHeight - 100);
     yuuri = new Skater(color(255, 0, 0));
 }
+
 
 function drawTrails() {
     for (var key in trails) {
